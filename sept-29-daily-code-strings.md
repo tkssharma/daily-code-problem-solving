@@ -24,5 +24,26 @@ Given string str, - How do you find the longest palindromic substring in str? (s
 Most Common Solutions 
 
 ```javascript
-
+// lot of things can be solvd by just gettig map of a string characters
+const map ={};
+const string = "Hello World";
+const array = string.split("");
+array.forEach(i => map[i] ? map[i] = map[i] + 1 : map[i] = 1);
+console.log(map)
 ```
+
+
+```javascript
+// lot of things can be solvd by just gettig map of a string characters
+const string = "hello world";
+const removeDups = [... new Set(string.split(""))].join("")
+```
+
+```javascript
+// Remove char from String
+const removeChar = (string, char) {
+    return string.split("").filter(i => i !== char).join("");
+}
+```
+
+
