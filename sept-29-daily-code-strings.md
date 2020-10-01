@@ -16,10 +16,10 @@
 - How do you check if a given string is a palindrome? (solution)
 - How do you find the length of the longest substring without repeating characters? (solution)
 - Given string str, - How do you find the longest palindromic substring in str? (solution)
-- How to convert a byte array to String? (solution)
-- How to remove the duplicate character from String? (solution)
-- How to find the maximum occurring character in given String? (solution)
-- How do you remove a given character from String? (solution)
+- How to convert a byte array to String? (solution) DONE
+- How to remove the duplicate character from String? (solution) DONE
+- How to find the maximum occurring character in given String? (solution) DONE
+- How do you remove a given character from String? (solution) DONE
 
 Most Common Solutions 
 
@@ -165,5 +165,61 @@ let findPermutations = (string) => {
     }
     return permutationsArray
   }
+  
+  // another approach 
+  
+  const stringPermutations = str => {
+  if (str.length <= 2) return str.length === 2 ? [str, str[1] + str[0]] : [str];
+  return str
+    .split('')
+    .reduce(
+      (acc, letter, i) =>
+        acc.concat(stringPermutations(str.slice(0, i) + str.slice(i + 1)).map(val => letter + val)),
+      []
+    );
+};
+
+console.log(stringPermutations('abc'));
+console.log(stringPermutations('*$*'));
+```
+
+Reverse a String 
+
+```javascript
+const reverseString = (str) => {
+    return str.split('').reduce((r, c)=> c + r, '');
+};
+
+reverseString('hello world!');
+
+const reverseString = (str) => {
+    return str ? reverseString(str.substr(1)) + str[0] : str;
+};
+
+reverseString('hello world!');
+
+const reverseString = (str) => {
+    let reversed = '';
+    for (const c of str) {
+        reversed = c + reversed;
+    }
+    return reversed;
+};
+```
+
+- How to remove the duplicate character from String? (solution) DONE
+- How to find the maximum occurring character in given String? (solution) DONE
+- How do you remove a given character from String? (solution) DONE
+```javascript
+// map holding max value will be a char in map (max occuring char in a string)
+const mapOfString = str => {
+ const map ={};
+ str.split("").forEach(i => map[i] = map[i] ? map[i] + 1: 1);
+ return map;
+}
+const removeDuplicates = str.split("").filter((i, index, array) => {
+    return array.indexOf(i) === index
+});
+
 ```
 
