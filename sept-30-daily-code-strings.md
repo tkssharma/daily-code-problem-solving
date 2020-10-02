@@ -19,3 +19,45 @@
  - How do you find duplicates from an unsorted array? (solution)
  - Given an array of integers sorted in ascending order, find the starting and ending position of a given value? (solution)
  - Given an integer array, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum? (solution)
+
+
+ - How do you find the largest and smallest number in an unsorted integer array? (solution)
+```javascript
+const getMinMax = (array) => {
+    let min = array[0]
+    let max = array[0]
+    for(let k of array) {
+        if(k > max) {
+            max = k
+        }
+        if(k < min) {
+            min = k
+        }
+    }
+    return {max, min};
+
+} 
+```
+
+ - How do you find all pairs of an integer array whose sum is equal to a given number? (solution)
+```javascript
+function getPairsCount(arra, n, sum) { 
+  let count = 0; // Initialize result 
+  // Consider all possible pairs and check their sums 
+  for (let i=0; i<n; i++) 
+        for (let j=i+1; j<n; j++) 
+            if (arr[i]+arr[j] == sum) 
+                count++; 
+    return count; 
+}
+function twoSum(arr, S) {
+ const sum = [];
+  for(let i = 0; i< arr.length; i++) {
+    for(let j = i+1;  j < arr.length; j++) {
+      if(S == arr[i] + arr[j]) sum.push([arr[i],arr[j]])
+    }
+  }
+ return sum
+}
+
+```
