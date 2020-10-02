@@ -61,3 +61,99 @@ function twoSum(arr, S) {
 }
 
 ```
+
+```javascript
+const getMissing = (array, n) => {
+    const total = (n+1)*(n+2)/2;
+   for(let i =0 ; i< n ; i++) {
+       total -=a[i]; 
+   }
+   return total;
+}
+
+const mapOfString = array => {
+    const map ={};
+    array.forEach(i => map[i] = map[i] ? map[i] + 1: 1);
+    return map;
+}
+
+const getMinMax =(array) => {
+    let min = array[0];
+    let max = array[0];
+    for(let i=0 ; i< array.length; i++ ){
+        if(max > array[i]){
+            max = array[i]
+        }
+        if(min < array[i]){
+            min = array[i]
+        }
+    }
+    return {
+        max, min
+    }
+}
+```
+
+// [1,2,3,4,5,6] => 6
+// [[2,4], [1,5]]
+
+```javascript
+const getPairsCount = (array, sum) => {
+    let count = 0; // Initialize result 
+    let pairs = [];
+  // Consider all possible pairs and check their sums 
+  for (let i=0; i<n; i++) {
+        for (let j=i+1; j<n; j++) {
+            if (arr[i]+arr[j] === sum) {
+                count++; 
+                pairs.push([array[i], array[j]])
+            }
+        }
+  }    
+    return {
+        count,
+        pairs
+    } 
+}
+```
+
+```javascript
+const getMinMax =(array) => {
+    let min = array[0];
+    let max = array[0];
+    for(let i=0 ; i< array.length; i++ ){
+        if(max > array[i]){
+            max = array[i]
+        }
+        if(min < array[i]){
+            min = array[i]
+        }
+    }
+    return {
+        max, min
+    }
+}
+
+const removeDuplicates = array.filter((i, index, array) => {
+    return array.indexOf(i) === index
+});
+```
+
+```javascript
+const sortNumbers = array.sort((a,b) => a-b);
+const array = [1,2,3,1,2,3,4,51,2,34];
+const removeduplicated = (array) => {
+    const map = {};
+    const out =[];
+    for(let i of array) {
+        if(!map[array[i]]){
+            map[array[i]] = true;
+            out.push(array[i])
+        }
+    }
+    return out;
+}
+```
+
+
+
